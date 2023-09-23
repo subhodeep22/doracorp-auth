@@ -1,0 +1,6 @@
+packages:
+  - name: auth
+    actions:
+      - name: signUp
+        runtime: 'nodejs:default'
+        

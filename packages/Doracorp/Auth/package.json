@@ -1,0 +1,13 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "Doracorp Authentication",
+  "main": "signUp.js",
+  "scripts": {
+    "test": "jest --coverage --runInBand --forceExit --verbose false"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.7"
+  }
+}
