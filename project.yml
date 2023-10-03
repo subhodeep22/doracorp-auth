@@ -1,10 +1,18 @@
 environment:
   DB_URI: "${DB_URI}"
   SALT: "{SALT}"
+  ACCESS_TOKEN_PRIVATE_KEY: "${ACCESS_TOKEN_PRIVATE_KEY}"
+  REFRESH_TOKEN_PRIVATE_KEY: "${REFRESH_TOKEN_PRIVATE_KEY}"
+  ACCESS_TOKEN_PUBLIC_KEY: "${ACCESS_TOKEN_PUBLIC_KEY}"
+  REFRESH_TOKEN_PUBLIC_KEY: "${REFRESH_TOKEN_PUBLIC_KEY}"
 packages:
   - name: auth
     actions:
       - name: signUp
+        runtime: 'nodejs:default'
+        limits:
+          timeout: 5000
+      - name: login
         runtime: 'nodejs:default'
         limits:
           timeout: 5000

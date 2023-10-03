@@ -1,11 +1,11 @@
-const signUpBodyValidation = require("./utils/validateSchema")
-const User = require("./models/User");
+const validation = require("../../../lib/utils/validateSchema")
+const User = require("../../..//lib/models/User");
 const bcrypt = require("bcrypt");
 
-module.exports.main =  async (event) => {
+module.exports.main =  async (event,context) => {
   const {payload} = event
   try {
-    const { error } = signUpBodyValidation(payload);
+    const { error } = validation.signUpBodyValidation(payload);
     if (error){
         res = {
           statusCode: 400,
