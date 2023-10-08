@@ -13,6 +13,7 @@
     "joi": "^17.10.2",
     "joi-password-complexity": "^5.2.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^7.5.2"
+    "mongoose": "^7.5.2",
+    "pg-promise": "^11.5.4"
   }
 }

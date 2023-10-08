@@ -1,6 +1,7 @@
 const validation = require("../../../lib/utils/validateSchema")
-const User = require("../../..//lib/models/User");
+const User = require("../../..//lib/repository/UserRepoPg");
 const bcrypt = require("bcrypt");
+const pgp = require("pg-promise")()
 
 module.exports.main =  async (event,context) => {
   const {payload} = event
@@ -18,6 +19,7 @@ module.exports.main =  async (event,context) => {
     }
     const user = await User.findOne({ email: payload.email });
     if (user){
+      pgp.end()
       res = {
         statusCode: 400,
         body:{
@@ -32,6 +34,7 @@ module.exports.main =  async (event,context) => {
     const hashPassword = await bcrypt.hash(payload.password, salt);
 
     await User.create({ ...payload, password: hashPassword });
+    pgp.end()
     return res = {
       statusCode: 200,
       body:{
