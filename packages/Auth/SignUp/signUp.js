@@ -1,5 +1,5 @@
 const validation = require("../../../lib/utils/validateSchema")
-const User = require("../../..//lib/repository/UserRepoPg");
+const User = require("../../../lib/repository/UserRepoPg");
 const bcrypt = require("bcrypt");
 const pgp = require("pg-promise")()
 

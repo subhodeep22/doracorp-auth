@@ -1,5 +1,9 @@
 environment:
-  DB_URI: "${DB_URI}"
+  DB_HOST: "{DB_HOST}"
+  DB_PORT: "{DB_PORT}"
+  DB_DATABASE: "{DB_DATABASE}"
+  DB_USER: "{DB_USER}"
+  DB_PASSWORD: "{DB_PASSWORD}"
   SALT: "{SALT}"
 packages:
   - name: auth
